@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/payment-flow/static/css/main.7aa7d234.css",
+    "main.js": "/payment-flow/static/js/main.be16a238.js",
+    "static/js/787.72ad06e7.chunk.js": "/payment-flow/static/js/787.72ad06e7.chunk.js",
+    "static/media/Product Sans Regular.ttf": "/payment-flow/static/media/Product Sans Regular.d165384076551a756b3c.ttf",
+    "index.html": "/payment-flow/index.html",
+    "static/media/complete.svg": "/payment-flow/static/media/complete.08f5a0f12bfd0e74dcdc.svg",
+    "static/media/arrow-down.svg": "/payment-flow/static/media/arrow-down.726cf0e5d2f5e4694f43096ff0d2a3ce.svg",
+    "main.7aa7d234.css.map": "/payment-flow/static/css/main.7aa7d234.css.map",
+    "main.be16a238.js.map": "/payment-flow/static/js/main.be16a238.js.map",
+    "787.72ad06e7.chunk.js.map": "/payment-flow/static/js/787.72ad06e7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7aa7d234.css",
+    "static/js/main.be16a238.js"
+  ]
+}
