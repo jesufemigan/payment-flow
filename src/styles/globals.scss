@@ -101,10 +101,10 @@ button {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    right: 10%;
+    right: 8%;
     /*Adjust for position however you want*/
     
-    top: 60px;
+    top: 70px;
     padding: 0 0 2px;
     /*left line */
     
@@ -130,5 +130,10 @@ button {
     background-image: none;
     -ms-word-break: normal;
     word-break: normal;  
+  }
+
+  label {
+    font-size: 20px;
+    font-weight: 700;
   }
 }
