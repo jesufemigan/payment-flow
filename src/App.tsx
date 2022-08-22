@@ -6,21 +6,21 @@ import PaymentConfirmation from './components/PaymentConfirmation/PaymentConfirm
 import PurchaseComplete from './components/PurchaseComplete/PurchaseComplete';
 
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   
   
   return (
     <Background>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path='/' element={<Profile />}/>
           <Route path='/billing' element={<Billing />}/>
           <Route path='/payment-confirmation' element={<PaymentConfirmation />}/>
           <Route path='/payment-complete' element={<PurchaseComplete />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </Background>
   );
 }
