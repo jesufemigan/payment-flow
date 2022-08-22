@@ -1,0 +1,37 @@
+@use '../../styles/utils/colors' as c;
+
+.content {
+  margin-top: 126px;
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 59px;
+    color: c.$text-secondary;
+  }
+}
+
+.routes {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 27px;
+  border-bottom: 1px solid black;
+  color: c.$text-inactive;
+  padding-right: 20px;
+  margin-bottom: 40px;
+}
+
+.activeRoutes {
+  position: relative;
+  color: c.$text-active;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 13px;
+    border-radius: 10px;
+    background-color: c.$text-active;
+    top: 45px;
+    left: 0%;
+  }
+}

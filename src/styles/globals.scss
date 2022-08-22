@@ -1,0 +1,134 @@
+@use '../styles/utils/colors' as c;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "Product Sans";
+  src: url('../assets/fonts/Product\ Sans\ Regular.ttf');
+}
+
+$font: 'Product Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  padding-bottom: 80px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    margin-bottom: 15px;
+
+    label {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    span {
+      color: red;
+      margin-left: 5px;
+      font-size: 20px;
+    }
+  }
+
+  small {
+    color: c.$text-small;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  input {
+    border: 1px solid c.$input-border;
+    border-radius: 10px;
+    padding: 17px 27px;
+    font-size: 20px;
+    font-family: inherit;
+    color: c.$text-primary;
+  }
+}
+
+button.primaryBtn {
+  background: linear-gradient(c.$button-0, c.$text-active);
+  color: c.$text-white;
+  border-radius: 10px;
+  padding: 15px 100px;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  background: none;
+  color: c.$text-secondary;
+  font-weight: 700;
+}
+
+.actionBtn {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.local, .state {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  
+  &::after {
+    content: '<';
+    font: 20px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 10%;
+    /*Adjust for position however you want*/
+    
+    top: 60px;
+    padding: 0 0 2px;
+    /*left line */
+    
+    position: absolute;
+    pointer-events: none;
+  }
+  select {
+    border: 1px solid c.$input-border;
+    border-radius: 10px;
+    padding: 17px 27px;
+    font-size: 20px;
+    font-family: inherit;
+    color: c.$text-primary;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    display: block;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #333;
+    background-image: none;
+    -ms-word-break: normal;
+    word-break: normal;  
+  }
+}

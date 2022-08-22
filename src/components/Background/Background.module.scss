@@ -1,0 +1,24 @@
+@use '../../styles/utils/colors' as c;
+
+.container {
+  height: 100vh;
+  width: 100%;
+  padding-top: 50px;
+  background: linear-gradient(to right,#F2C94C, #F2994A);
+  background: linear-gradient(rgb(252, 244,219), rgb(252,235,219));
+  clip-path: polygon(0 0, 100% 0, 100% 43%, 0 89%);
+
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+
+  img {
+    float: right;
+    padding-right: 100px;
+  }
+}
+
+.content {
+  width: 55%;
+  margin: 0 auto;
+}

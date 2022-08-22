@@ -1,0 +1,43 @@
+@use '../../styles/utils/colors' as c;
+
+.container {
+  width: 90%;
+  margin: auto;
+  margin-top: 20%;
+  background-color: white;
+  box-shadow: 0px 6px 10px 0px rgba(33, 30, 67, 0.08);
+  border-radius: 10px;
+  padding: 67px 150px;
+
+
+  .imgContainer {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: white;
+    background-image: url('../../assets/complete.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 6px 10px 0px rgba(33, 30, 67, 0.08);
+
+  }
+  h1 {
+    color: c.$text-secondary;
+    margin-bottom: 30px;
+    font-size: 48px;
+  }
+
+  p {
+    width: 90%;
+    line-height: 1.5;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  a {
+    color: c.$text-active;
+    
+  }
+}

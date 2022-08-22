@@ -1,0 +1,63 @@
+@use '../../styles/utils/colors' as c; 
+.payment {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 10px 15px 0px rgba(33, 30, 67, 0.08);
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: c.$table-header;
+    border: none;
+    padding: 0 100px;
+    height: 70px;
+    border-collapse: collapse;
+    p {
+      font-size: 20px;
+      color: white;
+    }
+  }
+  
+  .table {
+    padding-top: 50px;
+    font-size: 20px;
+    width: 100%;
+    background-color: white;
+    color: c.$text-secondary;
+    padding-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    .tableRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 100px;
+    }
+
+    .line {
+      background-color: c.$line-color;
+      width: 85%;
+      height: 1px;
+      margin: 0 auto;
+    }
+
+    .total {
+      width: 80%;
+      margin: 0 auto;
+      border: 1px solid c.$line-color;
+      padding: 14px 20px;
+      border-radius: 5px;
+    }
+  }
+
+  .null {
+    color: black !important;
+  }
+
+  margin-bottom: 60px;
+}
