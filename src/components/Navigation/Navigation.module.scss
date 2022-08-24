@@ -1,5 +1,5 @@
 @use '../../styles/utils/colors' as c;
-
+@use '../../styles/utils/breakpoints' as b;
 .content {
   margin-top: 126px;
 
@@ -7,6 +7,12 @@
     font-size: 36px;
     margin-bottom: 59px;
     color: c.$text-secondary;
+  }
+
+  h2 {
+    @include b.breakpoint-down(medium) {
+      // font-size: 16px;
+    }
   }
 }
 
@@ -18,12 +24,18 @@
   color: c.$text-inactive;
   padding-right: 20px;
   margin-bottom: 40px;
+
+  @include b.breakpoint-down(medium) {
+    // gap: 60px;
+    padding-right: 0;
+  }
 }
+
 
 .activeRoutes {
   position: relative;
   color: c.$text-active;
-
+  
   &::after {
     content: '';
     position: absolute;
@@ -33,5 +45,14 @@
     background-color: c.$text-active;
     top: 45px;
     left: 0%;
+
+    @include b.breakpoint-down(medium) {
+      top: 170%;
+      width: 100px;
+    }
+
+    @include b.breakpoint-down(small) {
+      top: 130%;
+    }
   }
 }

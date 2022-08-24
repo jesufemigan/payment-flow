@@ -1,4 +1,5 @@
 @use '../../styles/utils/colors' as c;
+@use '../../styles/utils/breakpoints' as b;
 
 .container {
   width: 90%;
@@ -8,6 +9,11 @@
   box-shadow: 0px 6px 10px 0px rgba(33, 30, 67, 0.08);
   border-radius: 10px;
   padding: 67px 150px;
+
+  @include b.breakpoint-down(medium) {
+    text-align: center;
+    padding: 50px;
+  }
 
 
   .imgContainer {
