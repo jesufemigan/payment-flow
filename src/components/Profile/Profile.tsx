@@ -5,26 +5,18 @@ import Navigation from "../Navigation/Navigation";
 
 import styles from './Profile.module.scss';
 
-
-interface State {
-  name: string
-  capital: string
-}
+import data from '../../data/state-lga.json';
 
 
 const Profile: React.FC = () => {
-  const [states, setStates] = useState<State[]>([])
-  const [local, setLocal] = useState<string[]>([]) 
-  const stateRef = useRef(null)
+  const [states, setStates] = useState<string[]>([])
+  const [local, setLocal] = useState<{ name: string, id: number }[]>(data[0].states.locals) 
+  const stateRef = useRef<HTMLSelectElement>(null)
   const [selectedState, setSelectedState] = useState('Abia')
   
-  // http://locationsng-api.herokuapp.com/api/v1/states/lagos/lgas
-
-  
   const getState = async () => {
-    const res = await fetch('http://locationsng-api.herokuapp.com/api/v1/states')
-    const data = await res.json()
-    setStates(data)
+    const states = data.map(states => states.states.name.split(' ')[0])
+    setStates(states)
   }
 
   const handleState = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -41,21 +33,18 @@ const Profile: React.FC = () => {
   
   useEffect(() => {
     const getLocal = async () => {
-      const res = await fetch(`http://locationsng-api.herokuapp.com/api/v1/states/${selectedState}/lgas`)
-      const data = await res.json()
-      setLocal(await data)
+      data.map(states => {
+        if (stateRef.current != null) {
+          if (states.states.name.split(' ')[0] === stateRef.current.value) {
+            setLocal(states.states.locals)
+          }
+        }
+        return states
+      })
     }
     getLocal()
-    console.log(selectedState)
   }, [selectedState])
 
-  // useEffect(() => {
-  //   if (stateRef.current != null) {
-  //     getLocal(stateRef.current.value)
-  //   }
-  // }, [])
-
-  
   return (
     <>
       <Navigation />
@@ -83,7 +72,7 @@ const Profile: React.FC = () => {
             <label htmlFor="Local Government">Local Government</label>
             <select name="Local Government" id="Local Government">
               {local?.map(each =>(
-                <option value={each} key={each}>{each}</option>
+                <option value={each.name} key={each.id}>{each.name}</option>
               ))}
             </select>
           </div>
@@ -91,7 +80,7 @@ const Profile: React.FC = () => {
             <label htmlFor="state">State</label>
             <select name="state" id="state" ref={stateRef} onChange={handleState}>
               {states.map(state => (
-                <option value={state.name} key={state.name}>{state.name}</option>
+                <option value={state} key={state}>{state}</option>
               ))}
             </select>
           </div>
